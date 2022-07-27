@@ -1,6 +1,18 @@
 # OpenSea Metadata Builder
 Solidity library for building onchain metadatas following OpeaSea specifications
 
+## Installation
+
+```bash
+npm i @zerohix/opensea-metadata-lib
+```
+
+## Usage
+
+```solidity
+import "@zerohix/opensea-metadata-lib/OSMetadataBuilder.sol";
+```
+
 ## Methods
 
 - buildMetadata()
@@ -15,6 +27,8 @@ Return the base64 encoded metadata as string
 ## Example
 
 ```solidity
+import "@zerohix/opensea-metadata-lib/OSMetadataBuilder.sol";
+
 function tokenURI() public pure returns(string memory) {
     
     OSMetadataBuilder.Metadata memory metadata;
