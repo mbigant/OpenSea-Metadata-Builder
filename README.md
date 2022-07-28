@@ -1,5 +1,5 @@
 # OpenSea Metadata Builder
-Solidity library for building onchain metadatas following OpeaSea specifications
+Solidity library for building onchain metadatas following OpenSea specifications
 
 ## Installation
 
@@ -51,7 +51,7 @@ function tokenURI() public pure returns(string memory) {
 }
 ```
 
-## Result
+## Results
 
 ### Calling buildMetadata()
 

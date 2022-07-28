@@ -1,6 +1,6 @@
 {
   "name": "@zerohix/opensea-metadata-lib",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Mickaël BIGANT",
   "keywords": [
     "nft",
@@ -8,7 +8,7 @@
     "opensea",
     "metadata"
   ],
-  "description": "Solidity library for building onchain metadatas following OpeaSea specifications",
+  "description": "Solidity library for building onchain metadatas following OpenSea specifications",
   "main": "OSMetadataBuilder.sol",
   "repository": {
     "type": "git",
