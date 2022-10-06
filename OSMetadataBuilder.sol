@@ -47,17 +47,49 @@ library OSMetadataBuilder {
         return string(
             abi.encodePacked(
                 '{',
-                    '"description":', abi.encodePacked('"', _metadata.description ,'"', ','),
-                    '"name":', abi.encodePacked('"', _metadata.name ,'"', ','),
-                    '"external_url":', abi.encodePacked('"', _metadata.externalUrl ,'"', ','),
-                    '"image":', abi.encodePacked('"', _metadata.image ,'"', ','),
-                    '"background_color":', abi.encodePacked('"', _metadata.backgroundColor ,'"', ','),
-                    '"animation_url":', abi.encodePacked('"', _metadata.animationUrl ,'"', ','),
-                    '"youtube_url":', abi.encodePacked('"', _metadata.youtubeUrl ,'"', ','),
-                    '"attributes":', buildAttributes(_attributes),
+                getDescription(_metadata),
+                getName(_metadata),
+                getExternalUrl(_metadata),
+                getImage(_metadata),
+                getBgColor(_metadata),
+                getAnimationUrl(_metadata),
+                getYoutubeUrl(_metadata),
+                getAttributes(_attributes),
                 '}'
             )
         );
+    }
+
+    function getDescription(Metadata memory _metadata) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"description":', abi.encodePacked('"', _metadata.description ,'"', ',')));
+    }
+
+    function getName(Metadata memory _metadata) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"name":', abi.encodePacked('"', _metadata.name ,'"', ',')));
+    }
+
+    function getExternalUrl(Metadata memory _metadata) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"external_url":', abi.encodePacked('"', _metadata.externalUrl ,'"', ',')));
+    }
+
+    function getImage(Metadata memory _metadata) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"image":', abi.encodePacked('"', _metadata.image ,'"', ',')));
+    }
+
+    function getBgColor(Metadata memory _metadata) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"background_color":', abi.encodePacked('"', _metadata.backgroundColor ,'"', ',')));
+    }
+
+    function getAnimationUrl(Metadata memory _metadata) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"animation_url":', abi.encodePacked('"', _metadata.animationUrl ,'"', ',')));
+    }
+
+    function getYoutubeUrl(Metadata memory _metadata) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"youtube_url":', abi.encodePacked('"', _metadata.youtubeUrl ,'"', ',')));
+    }
+
+    function getAttributes(Attribute[] memory _attributes) internal pure returns( string memory ) {
+        return string(abi.encodePacked('"attributes":', buildAttributes(_attributes)));
     }
 
     function buildAttributes( Attribute[] memory _attributes ) private pure returns (string memory) {
